@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./App.scss";
-import { Canvas, useThree } from "react-three-fiber";
-import { Controls, useControl } from "react-three-gui";
-import { Text, OrbitControls, Text3DFacade } from "drei";
+import { Canvas } from "react-three-fiber";
+import { useControl } from "react-three-gui";
+import { Text } from "drei";
 
 function App() {
   const [rotation, setRotation] = useState([0, 0, 0, 0]);
-  const { viewport } = useThree();
+
   const color = useControl("color", { type: "color", value: "#ADD8E6" });
   const fontSize = useControl("fontSize", {
     type: "number",
@@ -14,12 +14,7 @@ function App() {
     min: 1,
     max: 100,
   });
-  const maxWidth = useControl("maxWidth", {
-    type: "number",
-    value: 90,
-    min: 1,
-    max: 100,
-  });
+
   const lineHeight = useControl("lineHeight", {
     type: "number",
     value: 0.75,
